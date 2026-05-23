@@ -6,7 +6,10 @@ import StartScreen from './views/StartScreen.jsx'
 
 export default function App() {
   const [quizResults, setQuizResults] = useLocalStorage('quizResults', initialResults(allQuizData))
-  const [screen] = useState('start')
+  // eslint-disable-next-line no-unused-vars
+  const [screen, setScreen] = useState('start')
+  // eslint-disable-next-line no-unused-vars
+  const [session, setSession] = useState(null)
 
   function handleStart(mode, chapterName = null) {
     // Wired up in Task 7
