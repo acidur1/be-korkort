@@ -38,4 +38,12 @@ describe('allQuizData', () => {
       }
     }
   })
+
+  it('all chapters have a name and a questions array', () => {
+    for (const ch of allQuizData) {
+      expect(ch.chapter).toBeTruthy()
+      expect(Array.isArray(ch.questions)).toBe(true)
+      expect(ch.questions.length).toBeGreaterThan(0)
+    }
+  })
 })
