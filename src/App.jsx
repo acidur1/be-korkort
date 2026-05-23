@@ -4,6 +4,7 @@ import { createSession, initialResults } from './lib/quizState.js'
 import { useLocalStorage } from './hooks/useLocalStorage.js'
 import StartScreen from './views/StartScreen.jsx'
 import QuizSession from './views/QuizSession.jsx'
+import ResultsScreen from './views/ResultsScreen.jsx'
 
 export default function App() {
   const [quizResults, setQuizResults] = useLocalStorage('quizResults', initialResults(allQuizData))
@@ -35,6 +36,11 @@ export default function App() {
     setQuizResults(initialResults(allQuizData))
   }
 
+  function handlePracticeWrong(wrongQuestions) {
+    setSession({ mode: 'wrong-only', questions: wrongQuestions, currentIndex: 0 })
+    setScreen('quiz')
+  }
+
   return (
     <div className="container mx-auto p-4 sm:p-6 lg:p-8 text-gray-800 dark:text-gray-100 min-h-screen">
       <header className="text-center mb-8">
@@ -64,16 +70,13 @@ export default function App() {
         />
       )}
 
-      {screen === 'results' && (
-        <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg text-center">
-          <p className="text-xl font-bold mb-4">Quiz klart!</p>
-          <button
-            onClick={() => { setSession(null); setScreen('start') }}
-            className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700"
-          >
-            Tillbaka till menyn
-          </button>
-        </div>
+      {screen === 'results' && session && (
+        <ResultsScreen
+          session={session}
+          quizResults={quizResults}
+          onBackToMenu={() => { setSession(null); setScreen('start') }}
+          onPracticeWrong={handlePracticeWrong}
+        />
       )}
     </div>
   )
