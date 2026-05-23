@@ -25,7 +25,7 @@ export default async (request) => {
   }
 
   const { question, options, correct, selected } = body
-  if (!question || !options || !correct) {
+  if (!question || !options || !correct || selected === undefined) {
     return new Response(JSON.stringify({ error: 'Missing fields' }), {
       status: 400,
       headers: { 'Content-Type': 'application/json' },
