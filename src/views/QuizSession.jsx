@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { chapterForQuestion, isAnswerCorrect, recordAnswer } from '../lib/quizState.js'
 import { allQuizData } from '../data/questions.js'
 import QuestionCard from '../components/QuestionCard.jsx'
@@ -5,10 +6,12 @@ import ProgressDots from '../components/ProgressDots.jsx'
 
 export default function QuizSession({ session, quizResults, setSession, setQuizResults, onAbort, onFinish }) {
   const question = session.questions[session.currentIndex]
-  if (!question) {
-    onFinish()
-    return null
-  }
+
+  useEffect(() => {
+    if (!question) onFinish()
+  }, [question, onFinish])
+
+  if (!question) return null
 
   const chapter = chapterForQuestion(allQuizData, question.id)
   const savedEntry = session.mode === 'random'
