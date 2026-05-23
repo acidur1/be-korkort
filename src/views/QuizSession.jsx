@@ -34,6 +34,19 @@ export default function QuizSession({ session, quizResults, setSession, setQuizR
     setSession({ ...session, currentIndex: session.currentIndex + 1 })
   }
 
+  function buildProgressResults() {
+    if (session.mode !== 'random') return quizResults
+    const synth = {}
+    for (const q of session.questions) {
+      const ch = chapterForQuestion(allQuizData, q.id)
+      if (!synth[ch]) synth[ch] = { questions: {} }
+      if (session.ephemeral?.[q.id]) {
+        synth[ch].questions[q.id] = session.ephemeral[q.id]
+      }
+    }
+    return synth
+  }
+
   const isLast = session.currentIndex === session.questions.length - 1
   const hasAnswered = Boolean(savedEntry?.answered)
 
@@ -49,7 +62,7 @@ export default function QuizSession({ session, quizResults, setSession, setQuizR
         <ProgressDots
           questions={session.questions}
           currentIndex={session.currentIndex}
-          results={quizResults}
+          results={buildProgressResults()}
           chapterFor={(id) => chapterForQuestion(allQuizData, id)}
         />
         <span className="text-sm text-gray-600 dark:text-gray-400 tabular-nums">
