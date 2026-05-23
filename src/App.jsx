@@ -3,16 +3,19 @@ import { allQuizData } from './data/questions.js'
 import { createSession, initialResults, getWrongQuestions } from './lib/quizState.js'
 import { useLocalStorage } from './hooks/useLocalStorage.js'
 import { useTheme } from './hooks/useTheme.js'
+import { useInstallPrompt } from './hooks/useInstallPrompt.js'
 import StartScreen from './views/StartScreen.jsx'
 import QuizSession from './views/QuizSession.jsx'
 import ResultsScreen from './views/ResultsScreen.jsx'
 import ThemeToggle from './components/ThemeToggle.jsx'
+import InstallBanner from './components/InstallBanner.jsx'
 
 export default function App() {
   const [quizResults, setQuizResults] = useLocalStorage('quizResults', initialResults(allQuizData))
   const [screen, setScreen] = useState('start')
   const [session, setSession] = useState(null)
   const { theme, cycle } = useTheme()
+  const install = useInstallPrompt()
 
   const wrongCount = getWrongQuestions(quizResults, allQuizData).length
 
@@ -89,6 +92,13 @@ export default function App() {
           onPracticeWrong={handlePracticeWrong}
         />
       )}
+      <InstallBanner
+        canPromptAndroid={install.canPromptAndroid}
+        showIosInstructions={install.showIosInstructions}
+        dismissed={install.dismissed}
+        dismiss={install.dismiss}
+        onPromptInstall={install.promptInstall}
+      />
     </div>
   )
 }
