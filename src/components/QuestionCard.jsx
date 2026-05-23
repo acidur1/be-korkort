@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import AnswerOption from './AnswerOption.jsx'
 import { isAnswerCorrect } from '../lib/quizState.js'
+import ExplainSection from './ExplainSection.jsx'
 
 export default function QuestionCard({ question, savedEntry, onAnswer }) {
   const isMulti = question.correct.length > 1
@@ -71,9 +72,12 @@ export default function QuestionCard({ question, savedEntry, onAnswer }) {
       )}
 
       {answered && (
-        <div className={`mt-4 p-3 rounded-lg ${correct ? 'bg-green-100 dark:bg-green-900 text-green-900 dark:text-green-100' : 'bg-red-100 dark:bg-red-900 text-red-900 dark:text-red-100'}`}>
-          {correct ? 'Rätt svar!' : <>Fel svar. Rätt: <strong>{question.correct.join(', ')}</strong></>}
-        </div>
+        <>
+          <div className={`mt-4 p-3 rounded-lg ${correct ? 'bg-green-100 dark:bg-green-900 text-green-900 dark:text-green-100' : 'bg-red-100 dark:bg-red-900 text-red-900 dark:text-red-100'}`}>
+            {correct ? 'Rätt svar!' : <>Fel svar. Rätt: <strong>{question.correct.join(', ')}</strong></>}
+          </div>
+          <ExplainSection question={question} selected={isMulti ? selected : selected[0]} />
+        </>
       )}
     </div>
   )
