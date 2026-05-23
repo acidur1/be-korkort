@@ -7,7 +7,7 @@ export default function InstallBanner({ canPromptAndroid, showIosInstructions, d
       <div className="text-sm">
         {canPromptAndroid
           ? 'Installera appen för snabbare åtkomst.'
-          : <>Installera appen: tryck <strong>⎋ Dela</strong> och sedan <strong>"Lägg till på hemskärmen"</strong>.</>}
+          : <>Installera appen: tryck <strong>⬆ Dela</strong> och sedan <strong>"Lägg till på hemskärmen"</strong>.</>}
       </div>
       <div className="flex gap-2 flex-shrink-0">
         {canPromptAndroid && (
