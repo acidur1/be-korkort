@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { allQuizData } from './data/questions.js'
-import { createSession, initialResults } from './lib/quizState.js'
+import { createSession, initialResults, getWrongQuestions } from './lib/quizState.js'
 import { useLocalStorage } from './hooks/useLocalStorage.js'
 import { useTheme } from './hooks/useTheme.js'
 import StartScreen from './views/StartScreen.jsx'
@@ -13,6 +13,8 @@ export default function App() {
   const [screen, setScreen] = useState('start')
   const [session, setSession] = useState(null)
   const { theme, cycle } = useTheme()
+
+  const wrongCount = getWrongQuestions(quizResults, allQuizData).length
 
   function handleStart(mode, chapterName = null) {
     const s = createSession(mode, allQuizData, quizResults, chapterName)
@@ -62,6 +64,7 @@ export default function App() {
         <StartScreen
           allQuizData={allQuizData}
           quizResults={quizResults}
+          wrongCount={wrongCount}
           onStart={handleStart}
           onClearResults={handleClearResults}
         />

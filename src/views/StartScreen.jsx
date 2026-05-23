@@ -1,4 +1,4 @@
-export default function StartScreen({ allQuizData, quizResults, onStart, onClearResults }) {
+export default function StartScreen({ allQuizData, quizResults, wrongCount, onStart, onClearResults }) {
   const totalAnswered = Object.values(quizResults).reduce((s, c) => s + c.answered, 0)
   const totalScore = Object.values(quizResults).reduce((s, c) => s + c.score, 0)
   const totalQuestions = Object.values(quizResults).reduce((s, c) => s + c.total, 0)
@@ -19,6 +19,22 @@ export default function StartScreen({ allQuizData, quizResults, onStart, onClear
         >
           Hela quizet ({totalAnswered}/{totalQuestions})
         </button>
+
+        <button
+          onClick={() => onStart('random')}
+          className="w-full font-semibold py-3 px-6 rounded-lg bg-purple-600 hover:bg-purple-700 text-white"
+        >
+          🎲 Slumpat (30 frågor)
+        </button>
+
+        {wrongCount > 0 && (
+          <button
+            onClick={() => onStart('wrong-only')}
+            className="w-full font-semibold py-3 px-6 rounded-lg bg-orange-600 hover:bg-orange-700 text-white"
+          >
+            🔁 Öva fel ({wrongCount} {wrongCount === 1 ? 'fråga' : 'frågor'})
+          </button>
+        )}
 
         {allQuizData.map(ch => {
           const rch = quizResults[ch.chapter]
