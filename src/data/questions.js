@@ -77,8 +77,8 @@ export const allQuizData = [
                     {
                         id: 13,
                         text: 'I vilka fall krävs utökad behörighet B eller BE-behörighet för att dra släpvagn? (Välj alla korrekta alternativ)',
-                        options: ['A Alltid när släpets totalvikt är högre än 750 kg', 'B Om bilens totalviktvikt är 2050 kg och släpets totalvikt 1500 kg', 'C Om bilens totalvikt är 2250 kg och släpets totalvikt 2000 kg', 'D Om bilens tjänstevikt är 1200 kg och släpets totalvikt 950 kg'],
-                        correct: ['B Om bilens totalviktvikt är 2050 kg och släpets totalvikt 1500 kg', 'C Om bilens totalvikt är 2250 kg och släpets totalvikt 2000 kg']
+                        options: ['A Alltid när släpets totalvikt är högre än 750 kg', 'B Om bilens totalvikt är 2050 kg och släpets totalvikt 1500 kg', 'C Om bilens totalvikt är 2250 kg och släpets totalvikt 2000 kg', 'D Om bilens tjänstevikt är 1200 kg och släpets totalvikt 950 kg'],
+                        correct: ['B Om bilens totalvikt är 2050 kg och släpets totalvikt 1500 kg', 'C Om bilens totalvikt är 2250 kg och släpets totalvikt 2000 kg']
                     },
                     {
                         id: 14,
@@ -101,7 +101,7 @@ export const allQuizData = [
                     {
                         id: 17,
                         text: 'Vilka regler gäller om du ska övningsköra för att ta ett BE-körkort? (Välj alla korrekta alternativ)',
-                        options: ['A Jag måste vara minst 18 år', 'B Jag måste vara minst 19 år', 'C Jag måste haft B-körkort i minst 1 år', 'D Jag måste ha minst B-körkort'],
+                        options: ['A Jag måste vara minst 18 år', 'B Jag måste vara minst 19 år', 'C Jag måste ha haft B-körkort i minst 1 år', 'D Jag måste ha minst B-körkort'],
                         correct: ['A Jag måste vara minst 18 år', 'D Jag måste ha minst B-körkort']
                     },
                     {
@@ -225,7 +225,7 @@ export const allQuizData = [
                     },
                     {
                         id: 37,
-                        text: 'Vilket eller vilka alternativ är riktiga vad gäller styrserrvon? (Välj alla korrekta alternativ)',
+                        text: 'Vilket eller vilka alternativ är riktiga vad gäller styrservon? (Välj alla korrekta alternativ)',
                         options: ['Styrservon manövreras med hjälp av tryckluft', 'Styrservon gör så att stötar och slag i ratten dämpas', 'Styrservon gör så att jag lättare kan styra bilen', 'Styrservon fungerar även om jag stänger av motorn'],
                         correct: ['Styrservon gör så att stötar och slag i ratten dämpas', 'Styrservon gör så att jag lättare kan styra bilen']
                     },
@@ -262,7 +262,7 @@ export const allQuizData = [
                     {
                         id: 43,
                         text: 'Under vilken tid är det normalt tillåtet att köra med dubbdäck?',
-                        options: ['Fr.o.m. den 1 oktober t.o.m. den 15 april', 'Fr.o.m. den 1 oktober t.o.m. den 31 april', 'Fr.o.m. den 1 november t.o.m. den 30 april'],
+                        options: ['Fr.o.m. den 1 oktober t.o.m. den 15 april', 'Fr.o.m. den 1 oktober t.o.m. den 30 april', 'Fr.o.m. den 1 november t.o.m. den 30 april'],
                         correct: ['Fr.o.m. den 1 oktober t.o.m. den 15 april']
                     },
                     {
@@ -346,7 +346,7 @@ export const allQuizData = [
                     {
                         id: 57,
                         text: 'Nyare bilar måste ha tvåkrets bromssystem. Vad innebär detta?',
-                        options: ['Systemet fördubblar bromseffekten', 'Om ena kretsen går sönder har man ändå broms på två eller tre hjul', 'Man behöver inte trampa lika hårt på fotbromspedalen som i ett enkretsystem'],
+                        options: ['Systemet fördubblar bromseffekten', 'Om ena kretsen går sönder har man ändå broms på två eller tre hjul', 'Man behöver inte trampa lika hårt på fotbromspedalen som i ett enkretssystem'],
                         correct: ['Om ena kretsen går sönder har man ändå broms på två eller tre hjul']
                     },
                     {
@@ -597,7 +597,7 @@ export const allQuizData = [
                     {
                         id: 98,
                         text: 'Du kör en bil med båttrailer. Hur bör du förankra båten på trailern?',
-                        options: ['A. Endast med vinschtrossen i fören på båten', 'B. Endast med surrningar framtil och baktill', 'C. Med vinschtrossen samt med surrningar framtill och baktill'],
+                        options: ['A. Endast med vinschtrossen i fören på båten', 'B. Endast med surrningar framtill och baktill', 'C. Med vinschtrossen samt med surrningar framtill och baktill'],
                         correct: ['C. Med vinschtrossen samt med surrningar framtill och baktill']
                     },
                     {
@@ -626,7 +626,7 @@ export const allQuizData = [
                     },
                     {
                         id: 103,
-                        text: 'Hur ofta bör en gasolbesiktning provtryckas?',
+                        text: 'Hur ofta bör en gasolanläggning provtryckas?',
                         options: ['En gång i månaden', 'En gång om året', 'En gång vart tredje år'],
                         correct: ['En gång om året']
                     },
@@ -649,31 +649,31 @@ export const allQuizData = [
                 questions: [
                     {
                         id: 106,
-                        text: 'Vilket eller vilka av följande fordon (fordonskombinationer) får köra in på en väg med detta vägmärke? Vägmärket ska visa 3,5t (Välj alla korrekta alternativ)<br><img src="https://www.transportstyrelsen.se/globalassets/global/vag/vagmarken2/c.-forbudsmarken/c21.-begransad-bruttovikt-pa-fordon-och-fordonstag/c21-1.png" alt="Vägmärke förbud med totalvikt över 3,5 ton" class="road-sign-img">',
+                        text: 'Vilket eller vilka av följande fordon (fordonskombinationer) får köra in på en väg med detta vägmärke? (Välj alla korrekta alternativ)<br><img src="/marken/c21-3.5t.png" alt="Vägmärke: begränsad bruttovikt på fordon och fordonståg, 3,5 ton" class="road-sign-img">',
                         options: ['A. En lastbil med tjänstevikten 2,8 ton och totalvikten 3,8 ton, om bilen för tillfället är olastad', 'B. En fordonskombination vars sammanlagda totalvikt är 4,2 ton, men som för tillfället har en sammanlagd bruttovikt på 4 ton', 'C. En fordonskombination där dragbilen för tillfället har en bruttovikt på 3,4 ton och släpet likaså en bruttovikt på 2 ton', 'D. En personbil vars bruttovikt för tillfället är 3,6 ton'],
                         correct: ['A. En lastbil med tjänstevikten 2,8 ton och totalvikten 3,8 ton, om bilen för tillfället är olastad']
                     },
                     {
                         id: 107,
-                        text: 'Vilket eller vilka av följande fordon (fordonskombinationer) får köra in på en väg med detta vägmärke? (Välj alla korrekta alternativ)<br><img src="https://www.transportstyrelsen.se/globalassets/global/vag/vagmarken2/c.-forbudsmarken/c07.-forbud-mot-trafik-med-tung-lastbil/c7-1.png" alt="Vägmärke förbud mot tung lastbil" class="road-sign-img">',
+                        text: 'Vilket eller vilka av följande fordon (fordonskombinationer) får köra in på en väg med detta vägmärke? (Välj alla korrekta alternativ)<br><img src="/marken/c7-1.png" alt="Vägmärke: förbud mot trafik med tung lastbil" class="road-sign-img">',
                         options: ['A. En personbil med släp, om kombinationens sammanlagda totalvikt är 3,7 ton', 'B. En lastbil med tillkopplat släp, om lastbilens totalvikt är 2,7 ton och släpets totalvikt 1,2 ton', 'C. Personbil med bruttovikt 3,8 ton', 'D. Lastbil med tjänstevikt 3,5 ton'],
                         correct: ['A. En personbil med släp, om kombinationens sammanlagda totalvikt är 3,7 ton', 'B. En lastbil med tillkopplat släp, om lastbilens totalvikt är 2,7 ton och släpets totalvikt 1,2 ton', 'C. Personbil med bruttovikt 3,8 ton']
                     },
                     {
                         id: 108,
-                        text: 'Vägar som är utmärkta med detta vägmärke får inte trafikeras av vissa fordon. För vilket eller vilka av följande fordon gäller förbudet? (Välj alla korrekta alternativ)<br><img src="https://www.transportstyrelsen.se/globalassets/global/vag/vagmarken2/c.-forbudsmarken/c07.-forbud-mot-trafik-med-tung-lastbil/c7-1.png" alt="Vägmärke förbud mot motorfordon med tillkopplad släp" class="road-sign-img">',
+                        text: 'Vägar som är utmärkta med detta vägmärke får inte trafikeras av vissa fordon. För vilket eller vilka av följande fordon gäller förbudet? (Välj alla korrekta alternativ)<br><img src="/marken/c7-1.png" alt="Vägmärke: förbud mot trafik med tung lastbil" class="road-sign-img">',
                         options: ['För alla motorfordon som har en totalvikt över 3,5 ton', 'För bussar som har en totalvikt över 3,5 ton', 'Endast för tunga lastbilar', 'För alla lastbilar oavsett vikten'],
                         correct: ['Endast för tunga lastbilar']
                     },
                     {
                         id: 109,
-                        text: 'Vilket eller vilka av följande fordon (fordonskombinationer) får köra in på en väg med detta vägmärke? Vägmärket ska visa 3,5t (Välj alla korrekta alternativ)<br><img src="https://www.transportstyrelsen.se/globalassets/global/vag/vagmarken2/c.-forbudsmarken/c20.-begransad-bruttovikt-pa-fordon/c20-1.png" alt="Vägmärke förbud mot trafik med motorfordon med totalvikt över 3,5 ton" class="road-sign-img">',
+                        text: 'Vilket eller vilka av följande fordon (fordonskombinationer) får köra in på en väg med detta vägmärke? (Välj alla korrekta alternativ)<br><img src="/marken/c20-3.5t.png" alt="Vägmärke: begränsad bruttovikt på fordon, 3,5 ton" class="road-sign-img">',
                         options: ['A. En personbil vars tjänstevikt är 3,2 ton och som för tillfället har en last på 700 kg', 'B. En lastbil, vars tjänstevikt är 3,5 ton och som för tillfället är olastad', 'C. En lastbil med tillkopplat släp, om lastbilens bruttovikt är 3,4 ton och släpets bruttovikt 3,6 ton', 'D. En personbil med tillkopplat släp, om personbilens totalvikt är 1,8 ton och släpets totalvikt är 1,9 ton'],
                         correct: ['B. En lastbil, vars tjänstevikt är 3,5 ton och som för tillfället är olastad', 'D. En personbil med tillkopplat släp, om personbilens totalvikt är 1,8 ton och släpets totalvikt är 1,9 ton']
                     },
                     {
                         id: 110,
-                        text: 'Vad anger detta vägmärke?<br><img src="https://www.transportstyrelsen.se/globalassets/global/vag/vagmarken2/c.-forbudsmarken/c16.-begransad-fordonsbredd/c16-1.png" alt="Vägmärke förbud mot fordon med höjd över 2,2 meter" class="road-sign-img">',
+                        text: 'Vad anger detta vägmärke?<br><img src="/marken/c16-1.png" alt="Vägmärke: begränsad fordonsbredd" class="road-sign-img">',
                         options: ['Vägens bredd', 'Körbanans bredd', 'Största tillåtna fordonsbredd'],
                         correct: ['Största tillåtna fordonsbredd']
                     },
@@ -685,37 +685,37 @@ export const allQuizData = [
                     },
                     {
                         id: 112,
-                        text: 'Vilket eller vilka fordon får köra om en bil efter detta vägmärke? (Välj alla korrekta alternativ)<br><img src="https://www.transportstyrelsen.se/globalassets/global/vag/vagmarken2/c.-forbudsmarken/c29.-forbud-mot-omkorning-med-tung-lastbil/c29-1.png" alt="Vägmärke omkörningsförbud för personbil" class="road-sign-img">',
+                        text: 'Vilket eller vilka fordon får köra om en bil efter detta vägmärke? (Välj alla korrekta alternativ)<br><img src="/marken/c29-1.png" alt="Vägmärke: förbud mot omkörning med tung lastbil" class="road-sign-img">',
                         options: ['Lätt lastbil', 'Tung lastbil', 'Buss'],
                         correct: ['Lätt lastbil', 'Buss']
                     },
                     {
                         id: 113,
-                        text: 'Vilket eller vilka fordon får köra på en väg som har detta vägmärke? (Välj alla korrekta alternativ)<br><img src="https://www.transportstyrelsen.se/globalassets/global/vag/vagmarken2/c.-forbudsmarken/c06.-forbud-mot-trafik-med-motordrivet-fordon-med-tillkopplad-slapvagn/c6-1.png" alt="Vägmärke förbud mot lastbil med släp" class="road-sign-img">',
+                        text: 'Vilket eller vilka fordon får köra på en väg som har detta vägmärke? (Välj alla korrekta alternativ)<br><img src="/marken/c6-1.png" alt="Vägmärke: förbud mot motorfordon med tillkopplad släpvagn" class="road-sign-img">',
                         options: ['Lastbil med påhängsvagn', 'Personbil med en släpvagn som har en stel dragstång', 'Personbil med en släpvagn som har en ledad dragstång'],
                         correct: ['Lastbil med påhängsvagn', 'Personbil med en släpvagn som har en stel dragstång']
                     },
                     {
                         id: 114,
-                        text: 'Vad betyder detta vägmärke?<br><img src="https://www.transportstyrelsen.se/globalassets/global/vag/vagmarken2/c.-forbudsmarken/c04.-forbud-mot-trafik-med-motordrivet-fordon-med-fler-an-tva-hjul/c4-1.png" alt="Vägmärke förbud mot trafik med motorfordon som har fler än två hjul" class="road-sign-img">',
+                        text: 'Vad betyder detta vägmärke?<br><img src="/marken/c4-1.png" alt="Vägmärke: förbud mot trafik med motordrivet fordon med fler än två hjul" class="road-sign-img">',
                         options: ['A. Förbud att köra med motordrivna fordon', 'B. Förbud att köra med motordrivna fordon som har fler än två hjul', 'C. Förbud mot fordon med 4 hjul'],
                         correct: ['B. Förbud att köra med motordrivna fordon som har fler än två hjul']
                     },
                     {
                         id: 115,
-                        text: 'Vilket eller vilka fordon får du inte köra om efter detta vägmärke? (Välj alla korrekta alternativ)<br><img src="https://www.transportstyrelsen.se/globalassets/global/vag/vagmarken2/c.-forbudsmarken/c27.-forbud-mot-omkorning/c27-1.png" alt="Vägmärke omkörningsförbud av lastbil" class="road-sign-img">',
+                        text: 'Vilket eller vilka fordon får du inte köra om efter detta vägmärke? (Välj alla korrekta alternativ)<br><img src="/marken/c27-1.png" alt="Vägmärke: förbud mot omkörning" class="road-sign-img">',
                         options: ['Traktorer', 'Trehjuliga motorcyklar', 'Tvåhjuliga motorcyklar', 'Lastbilar'],
                         correct: ['Traktorer', 'Trehjuliga motorcyklar', 'Lastbilar']
                     },
                     {
                         id: 116,
-                        text: 'Vad bör du göra när du har passerat detta varningsmärke?<br><img src="https://www.transportstyrelsen.se/globalassets/global/vag/vagmarken2/a.-varningsmarken/a03.-varning-for-nedforslutning/a3-1.png" alt="Varningsmärke för brant nedförsbacke" class="road-sign-img">',
+                        text: 'Vad bör du göra när du har passerat detta varningsmärke?<br><img src="/marken/a3-1.png" alt="Varningsmärke: brant nedförsbacke" class="road-sign-img">',
                         options: ['Växla ner, eftersom jag strax kommer till en brant nedförsbacke', 'Dra mig mot vägens mitt, eftersom vägbanan kommer att luta starkt åt sidan', 'Öka farten för att lättare klara den uppförsbacke som snart kommer'],
                         correct: ['Växla ner, eftersom jag strax kommer till en brant nedförsbacke']
                     },
                     {
                         id: 117,
-                        text: 'Vad varnar detta märke för?<br><img src="https://www.transportstyrelsen.se/globalassets/global/vag/vagmarken2/a.-varningsmarken/a24.-varning-for-sidvind/a24-1.png" alt="Varningsmärke för sidvind" class="road-sign-img">',
+                        text: 'Vad varnar detta märke för?<br><img src="/marken/a24-1.png" alt="Varningsmärke: stark sidvind" class="road-sign-img">',
                         options: ['A. Stark sidvind från vänster', 'B. Stark sidvind från höger', 'C. Stark sidvind antingen från vänster eller höger'],
                         correct: ['B. Stark sidvind från höger']
                     },
@@ -817,7 +817,7 @@ export const allQuizData = [
                     },
                     {
                         id: 134,
-                        text: 'Vid vilka tillfällen får du tända bilens och släpets varnings-blinkers? (Välj alla korrekta alternativ)',
+                        text: 'Vid vilka tillfällen får du tända bilens och släpets varningsblinkers? (Välj alla korrekta alternativ)',
                         options: ['Om jag stannat för av- eller pålastning där det är parkeringsförbud', 'Om jag stannat för att hjälpa till vid en olycksplats', 'Om jag fått något fel på fordonet och blivit tvungen att stanna på ett olämpligt ställe'],
                         correct: ['Om jag stannat för att hjälpa till vid en olycksplats', 'Om jag fått något fel på fordonet och blivit tvungen att stanna på ett olämpligt ställe']
                     },

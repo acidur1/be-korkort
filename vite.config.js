@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import tailwindcss from '@tailwindcss/vite'
 import { VitePWA } from 'vite-plugin-pwa'
 import { writeFileSync } from 'fs'
 import { resolve } from 'path'
@@ -10,8 +9,8 @@ const manifest = {
   short_name: 'Körkort',
   description: 'Testa dina kunskaper inom BE-körkort.',
   lang: 'sv',
-  theme_color: '#2563eb',
-  background_color: '#f3f4f6',
+  theme_color: '#1e3a5f',
+  background_color: '#f7f6f2',
   display: 'standalone',
   orientation: 'portrait',
   start_url: '/',
@@ -45,7 +44,6 @@ function pwaManifestFix(outDir) {
 export default defineConfig({
   plugins: [
     react(),
-    tailwindcss(),
     VitePWA({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'icon-192.png', 'icon-512.png'],

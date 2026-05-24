@@ -15,22 +15,19 @@ export function isAnswerCorrect(question, answer) {
 }
 
 export function recordAnswer(results, chapterName, question, answer) {
-  const next = { ...results, [chapterName]: { ...results[chapterName] } }
+  const next = { ...results }
+  next[chapterName] = { ...results[chapterName] }
   const ch = next[chapterName]
   ch.questions = { ...ch.questions }
-
   const wasAnswered = Boolean(ch.questions[question.id]?.answered)
   const wasCorrect = Boolean(ch.questions[question.id]?.isCorrect)
   const correct = isAnswerCorrect(question, answer)
-
   ch.questions[question.id] = Array.isArray(answer)
     ? { answered: true, isCorrect: correct, selectedAnswers: answer }
     : { answered: true, isCorrect: correct, selectedAnswer: answer }
-
   if (!wasAnswered) ch.answered += 1
   if (wasCorrect && !correct) ch.score -= 1
   if (!wasCorrect && correct) ch.score += 1
-
   return next
 }
 
@@ -40,16 +37,22 @@ export function getWrongQuestions(results, allQuizData) {
     const rch = results[ch.chapter]
     if (!rch) continue
     for (const q of ch.questions) {
-      if (rch.questions[q.id]?.answered && !rch.questions[q.id].isCorrect) {
-        wrong.push(q)
-      }
+      const entry = rch.questions[q.id]
+      if (entry?.answered && !entry.isCorrect) wrong.push(q)
     }
   }
   return wrong
 }
 
-function shuffle(arr) {
-  const a = [...arr]
+export function chapterForQuestion(allQuizData, qid) {
+  for (const ch of allQuizData) {
+    if (ch.questions.some(q => q.id === qid)) return ch.chapter
+  }
+  return null
+}
+
+export function shuffle(arr) {
+  const a = arr.slice()
   for (let i = a.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1))
     ;[a[i], a[j]] = [a[j], a[i]]
@@ -60,34 +63,25 @@ function shuffle(arr) {
 export function createSession(mode, allQuizData, results, chapterName = null) {
   let questions = []
   let currentIndex = 0
-
   if (mode === 'chapter') {
     const ch = allQuizData.find(c => c.chapter === chapterName)
-    questions = ch ? [...ch.questions] : []
+    questions = ch ? ch.questions.slice() : []
     const rch = results[chapterName]
     if (rch) {
       const idx = questions.findIndex(q => !rch.questions[q.id]?.answered)
-      currentIndex = idx === -1 ? questions.length : idx
+      currentIndex = idx === -1 ? 0 : idx
     }
   } else if (mode === 'all') {
     questions = allQuizData.flatMap(c => c.questions)
     const idx = questions.findIndex(q => {
-      const chapter = allQuizData.find(c => c.questions.some(qq => qq.id === q.id))
-      return !results[chapter.chapter]?.questions[q.id]?.answered
+      const ch = allQuizData.find(c => c.questions.some(qq => qq.id === q.id))
+      return !results[ch.chapter]?.questions[q.id]?.answered
     })
-    currentIndex = idx === -1 ? questions.length : idx
-  } else if (mode === 'random') {
+    currentIndex = idx === -1 ? 0 : idx
+  } else if (mode === 'random' || mode === 'exam') {
     questions = shuffle(allQuizData.flatMap(c => c.questions)).slice(0, 30)
   } else if (mode === 'wrong-only') {
     questions = getWrongQuestions(results, allQuizData)
   }
-
-  return { mode, questions, currentIndex, chapterName }
-}
-
-export function chapterForQuestion(allQuizData, questionId) {
-  for (const ch of allQuizData) {
-    if (ch.questions.some(q => q.id === questionId)) return ch.chapter
-  }
-  return null
+  return { mode, questions, currentIndex, chapterName, startedAt: Date.now(), ephemeral: {} }
 }
