@@ -1,6 +1,9 @@
 # Local-only reference to old single-file app
 /archive
 
+# Claude working docs
+/docs
+
 # Dependencies
 /node_modules
 
