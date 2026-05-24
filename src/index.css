@@ -612,7 +612,7 @@ button {
   flex-direction: column;
   background: var(--bg-viewport);
   position: relative;
-  padding-top: 54px; /* clear iOS status bar */
+  padding-top: max(var(--space-4), env(safe-area-inset-top));
 }
 
 .app-bg {
