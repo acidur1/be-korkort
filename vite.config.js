@@ -52,6 +52,7 @@ export default defineConfig({
         globPatterns: ['**/*.{js,css,html,svg,png,ico}'],
         navigateFallback: '/index.html',
       },
+      devOptions: { enabled: false },
     }),
     pwaManifestFix('dist'),
   ],

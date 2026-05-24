@@ -6,7 +6,7 @@ import { allQuizData } from '../data/questions.js'
 import FeedbackPanel from './FeedbackPanel.jsx'
 
 export default function QuestionCard({ question, savedEntry, onAnswer, feedbackMode }) {
-  const isMulti = question.correct.length > 1
+  const isMulti = question.correct.length > 1 || /välj alla/i.test(question.text)
   const answered = Boolean(savedEntry?.answered)
   const showFeedback = answered && feedbackMode === 'instant'
 

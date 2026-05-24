@@ -5,8 +5,14 @@ export function useInstallPrompt() {
   const [deferredPrompt, setDeferredPrompt] = useState(null)
   const [installed, setInstalled] = useState(false)
   const [dismissed, setDismissed] = useLocalStorage('installBannerDismissed', false)
+  const [showIosInstructions, setShowIosInstructions] = useState(false)
 
   useEffect(() => {
+    const isIos = /iphone|ipad|ipod/i.test(navigator.userAgent)
+    const isStandalone = window.navigator.standalone === true ||
+      window.matchMedia('(display-mode: standalone)').matches
+    setShowIosInstructions(isIos && !isStandalone)
+
     function onBeforeInstall(e) {
       e.preventDefault()
       setDeferredPrompt(e)
@@ -23,10 +29,6 @@ export function useInstallPrompt() {
     }
   }, [])
 
-  const isIos = /iphone|ipad|ipod/i.test(navigator.userAgent)
-  const isStandalone = window.navigator.standalone === true ||
-    window.matchMedia('(display-mode: standalone)').matches
-
   async function promptInstall() {
     if (!deferredPrompt) return
     await deferredPrompt.prompt()
@@ -35,7 +37,7 @@ export function useInstallPrompt() {
 
   return {
     canPromptAndroid: Boolean(deferredPrompt),
-    showIosInstructions: isIos && !isStandalone,
+    showIosInstructions,
     installed,
     dismissed,
     dismiss: () => setDismissed(true),
